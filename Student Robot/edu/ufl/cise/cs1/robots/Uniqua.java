@@ -9,7 +9,7 @@ public class Uniqua extends TeamRobot {
     public void setColors() {
         setGunColor(Color.CYAN);
         setBodyColor(Color.CYAN);
-        setRadarColor(Color.CYAN);          //Team Color
+        setRadarColor(Color.RED);          //Team Color
         setBulletColor(Color.CYAN);         //Team Color
         setScanColor(Color.CYAN);
     }
