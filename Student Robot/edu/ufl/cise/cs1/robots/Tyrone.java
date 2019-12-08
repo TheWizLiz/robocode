@@ -3,14 +3,11 @@ package edu.ufl.cise.cs1.robots;
 import robocode.*;
 import robocode.util.Utils;
 
-<<<<<<< HEAD
+
 import java.awt.*;
 
-=======
->>>>>>> fa0e7f89e7d384712e52be76558a735a32d32b4f
-public class Tyrone extends TeamRobot
-{
-    public void run() {
+    public class Tyrone extends TeamRobot {
+     public void run() {
         setBodyColor(Color.cyan);
         setGunColor(Color.cyan);
         setRadarColor(Color.cyan);
