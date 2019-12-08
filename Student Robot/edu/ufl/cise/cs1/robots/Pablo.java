@@ -3,7 +3,7 @@ package edu.ufl.cise.cs1.robots;
 import robocode.*;
 import java.awt.*;
 
-public class Pablo extends TeamRobot {
+public class Pablo extends TeamRobot implements Droid {
     public void run() {
         setBodyColor(Color.PINK);
         setGunColor(Color.PINK);
@@ -11,15 +11,16 @@ public class Pablo extends TeamRobot {
         setBulletColor(Color.cyan);
         setScanColor(Color.PINK);
         while (true) {
-            ahead(100);
-            turnGunRight(360);
-            back(100);
-            turnGunRight(360);
+
         }
     }
 
     public void onScannedRobot(ScannedRobotEvent e) {
-        fire(1);
+       if (isTeammate(e.getName())) {
+           scan();
+       } else {
+                
+       }
     }
 
     public void onHitByBullet(HitByBulletEvent e) {
