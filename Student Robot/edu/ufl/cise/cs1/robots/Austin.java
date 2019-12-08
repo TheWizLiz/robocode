@@ -9,7 +9,7 @@ public class Austin extends TeamRobot
 
     public void run() {
 
-        setColors(Color.cyan, Color.cyan, Color.cyan, Color.cyan, Color.cyan);
+        setColors(Color.orange, Color.cyan, Color.cyan, Color.cyan, Color.cyan);
 
         while (true) {
             ahead(100);
