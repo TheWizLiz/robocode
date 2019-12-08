@@ -6,7 +6,7 @@ import robocode.util.Utils;
 
 import java.awt.*;
 
-    public class Tyrone extends TeamRobot {
+    public class Tyrone extends TeamRobot implements Droid {
      public void run() {
         setBodyColor(Color.cyan);
         setGunColor(Color.cyan);
@@ -27,7 +27,12 @@ import java.awt.*;
         }
     }
     public void onScannedRobot(ScannedRobotEvent e) {
+         if (isTeammate(e.getName())) {
+             scan();
+
+         }
         fire(3);
+         setMaxVelocity(8);
         setTurnRadarRight(2.0 * Utils.normalRelativeAngleDegrees(getHeading() + e.getBearing() - getRadarHeading()));
     }
 }
