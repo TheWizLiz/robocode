@@ -1,4 +1,3 @@
 exec/robots/
 exec/config/
-.idea/workspace.xml
-Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java
+*.xml
