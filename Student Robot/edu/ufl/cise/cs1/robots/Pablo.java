@@ -21,7 +21,7 @@ public class Pablo extends TeamRobot implements Droid {
         } else {
             turnRight(e.getBearing());
             fire(3);
-            ahead(5);
+            ahead(20);
         }
     }
 
@@ -34,15 +34,21 @@ public class Pablo extends TeamRobot implements Droid {
 
             if (theta <= 180) {
                 turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
+                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 50) {
+                    fire(3);
+                }
                 ahead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5);
-                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 10) {
-                    fire(1);
+                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 50) {
+                    fire(3);
                 }
             } else {
                 turnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
+                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 50) {
+                    fire(3);
+                }
                 ahead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5);
-                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 10) {
-                    fire(1);
+                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 50) {
+                    fire(3);
                 }
             }
 
