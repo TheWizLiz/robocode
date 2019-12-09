@@ -11,6 +11,8 @@ import java.io.IOException;
 public class Austin extends TeamRobot
 {
 
+    public int direction = 1;
+
     public void run() {
 
         RobotColors c = new RobotColors();
@@ -37,11 +39,13 @@ public class Austin extends TeamRobot
             if ( getRadarTurnRemaining() == 0.0 )
                 setTurnRadarRightRadians( Double.POSITIVE_INFINITY );
 
+                setTurnRight(5);
+                ahead(5);
+
             execute();
         } while ( true );
     }
     public void onScannedRobot(ScannedRobotEvent e) {
-
         // Don't fire on teammates
         if (isTeammate(e.getName())) {
             return;
@@ -55,7 +59,7 @@ public class Austin extends TeamRobot
 
         // Distance we want to scan from middle of enemy to either side
         // The 36.0 is how many units from the center of the enemy robot it scans.
-        double extraTurn = Math.min( Math.atan( 36.0 / e.getDistance() ), Rules.RADAR_TURN_RATE_RADIANS );
+        double extraTurn = Math.min( Math.atan( 18.0 / e.getDistance() ), Rules.RADAR_TURN_RATE_RADIANS );
 
         // Adjust the radar turn so it goes that much further in the direction it is going to turn
         // Basically if we were going to turn it left, turn it even more left, if right, turn more right.
@@ -83,45 +87,8 @@ public class Austin extends TeamRobot
         }
     }
 
-    /*
-    public void onHitRobot(HitRobotEvent e) {
-        if (e.getBearing() >= 0) {
-            direction = 1;
-        } else {
-            direction = -1;
-        }
-        turnRight(e.getBearing());
-        turnGunRight(e.getBearing());
-        // Determine a shot that won't kill the robot...
-        // We want to ram him instead for bonus points
-        if (e.getEnergy() > 16) {
-            fire(3);
-        } else if (e.getEnergy() > 10) {
-            fire(2);
-        } else if (e.getEnergy() > 4) {
-            fire(1);
-        } else if (e.getEnergy() > 2) {
-            fire(.5);
-        } else if (e.getEnergy() > .4) {
-            fire(.1);
-        }
-        ahead(40); // Ram him again!
-    }
-
-    */
     public void onHitByBullet(HitByBulletEvent e) {
 		turnLeft(90 - e.getBearing());
 	}
-
-	/*
-
-
-    public void turn(double degrees, int direction) {
-        setTurnRadarRight(degrees * direction);
-        turnGunRight(degrees * direction);
-        turnRight(degrees * direction);
-    }
-
-     */
 
 }
