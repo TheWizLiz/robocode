@@ -20,7 +20,7 @@ public class Uniqua extends TeamRobot implements Droid {
             back(15);
         } else {
             turnRight(e.getBearing());
-            fire(3);
+            fire(2);
             ahead(5);
         }
     }
