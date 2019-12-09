@@ -9,6 +9,7 @@ import static robocode.util.Utils.*;
 import java.awt.*;
 
 public class Pablo extends TeamRobot implements Droid {
+    int turn;
     public void run() {
         setBodyColor(Color.PINK);
         setGunColor(Color.PINK);
@@ -17,6 +18,10 @@ public class Pablo extends TeamRobot implements Droid {
     public void onHitRobot(HitRobotEvent e) {
         if (isTeammate(e.getName())) {
             back(15);
+        } else {
+            turnRight(e.getBearing());
+            fire(3);
+            ahead(5);
         }
     }
 
