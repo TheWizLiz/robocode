@@ -8,7 +8,7 @@ import sun.plugin2.message.Message;
 import static robocode.util.Utils.*;
 import java.awt.*;
 
-public class Pablo extends TeamRobot implements Droid{
+public class Pablo extends TeamRobot implements Droid {
     public void run() {
         setBodyColor(Color.PINK);
         setGunColor(Color.PINK);
