@@ -33,6 +33,21 @@ public class Tyrone extends TeamRobot implements Droid {
             } */
         }
 
+    public void onHitRobot(HitRobotEvent e) {
+        if (isTeammate(e.getName())) {
+            back(50);
+        }
+        setMaxVelocity(100);
+        fire(3);
+
+    }
+
+    public void onHitWall(HitWallEvent e) {
+
+            turnRight(90);
+            setMaxVelocity(4);
+    }
+
     public void onMessageReceived(MessageEvent e) {
         // Fire at a point
         if (e.getMessage() instanceof Point) {
@@ -46,10 +61,13 @@ public class Tyrone extends TeamRobot implements Droid {
             // Turn gun to target
             turnGunRight(normalRelativeAngleDegrees(theta - getGunHeading()));
             // Fire hard!
-            ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())));
-            if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) > 8)
-                fire(3);
+
+            if (theta <= 90) {
+                ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())));
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) > 8)
+                    fire(1);
             }
+        }
         // Set our colors
         else if (e.getMessage() instanceof RobotColors) {
             RobotColors c = (RobotColors) e.getMessage();
