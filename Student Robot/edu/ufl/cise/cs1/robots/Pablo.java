@@ -21,10 +21,18 @@ public class Pablo extends TeamRobot implements Droid {
             double dy = p.getY() - this.getY();
             double theta = Math.toDegrees(Math.atan2(dx, dy));
 
-            turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
-            ahead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5);
-            if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 5) {
-                fire(1);
+            if (theta <= 180) {
+                turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
+                ahead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5);
+                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 10) {
+                    fire(1);
+                }
+            } else {
+                turnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
+                ahead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5);
+                if ((Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5) <= 10) {
+                    fire(1);
+                }
             }
 
         } else if (e.getMessage() instanceof RobotColors) {
