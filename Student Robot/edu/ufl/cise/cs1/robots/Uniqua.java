@@ -30,8 +30,8 @@ public class Uniqua extends TeamRobot implements Droid{
 
     public void onMessageReceived(MessageEvent e) {
         // Fire at a point
-        if (e.getMessage() instanceof sampleteam.Point) {
-            sampleteam.Point p = (Point) e.getMessage();
+        if (e.getMessage() instanceof Point) {
+            Point p = (Point) e.getMessage();
             // Calculate x and y to target
             double dx = p.getX() - this.getX();
             double dy = p.getY() - this.getY();
