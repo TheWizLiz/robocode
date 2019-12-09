@@ -10,21 +10,21 @@ import static robocode.util.Utils.normalRelativeAngleDegrees;
 
 public class Uniqua extends TeamRobot implements Droid{
     public void setColors() {
-        setGunColor(Color.BLACK);
-        setBodyColor(Color.GREEN);
+        setGunColor(Color.PINK);
+        setBodyColor(Color.PINK);
         setRadarColor(Color.CYAN);          //Team Color
         setBulletColor(Color.CYAN);         //Team Color
-        setScanColor(Color.BLUE);
+        setScanColor(Color.PINK);
     }
 
     public void run() {
         while (true) {
-            turnRight(90);
-            ahead(100);
-            turnGunRight(360);
-            turnRight(90);
-            ahead(100);
-            turnGunRight(360);
+//            turnRight(90);
+//            ahead(100);
+//            turnGunRight(360);
+//            turnRight(90);
+//            ahead(100);
+//            turnGunRight(360);
         }
     }
 
@@ -39,9 +39,11 @@ public class Uniqua extends TeamRobot implements Droid{
             double theta = Math.toDegrees(Math.atan2(dx, dy));
 
             // Turn gun to target
+
+            turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
             turnGunRight(normalRelativeAngleDegrees(theta - getGunHeading()));
-            // Fire hard!
-            fire(3);
+            ahead(Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)));
+            fire(1);
         } // Set our colors
         else if (e.getMessage() instanceof RobotColors) {
             RobotColors c = (RobotColors) e.getMessage();
@@ -64,6 +66,9 @@ public class Uniqua extends TeamRobot implements Droid{
 //        }
 //    }
 
+    public void onHitRobot(HitRobotEvent event) {
+        back(20);
+    }
 
     public void onHitByBullet(HitByBulletEvent e) {
         back(10);
