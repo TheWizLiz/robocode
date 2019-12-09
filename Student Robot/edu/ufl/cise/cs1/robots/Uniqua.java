@@ -8,7 +8,7 @@ import java.awt.*;
 
 import static robocode.util.Utils.normalRelativeAngleDegrees;
 
-public class Uniqua extends TeamRobot {
+public class Uniqua extends TeamRobot implements Droid{
     public void setColors() {
         setGunColor(Color.BLACK);
         setBodyColor(Color.GREEN);
