@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="Commit to UF">
+    <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="s">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +189,7 @@
       <workItem from="1523935677293" duration="797000" />
       <workItem from="1523937913261" duration="21000" />
       <workItem from="1575846102795" duration="184000" />
-      <workItem from="1575915260359" duration="3750000" />
+      <workItem from="1575915260359" duration="7622000" />
     </task>
     <task id="LOCAL-00001" summary="s">
       <created>1575915870573</created>
@@ -210,35 +212,18 @@
       <option name="project" value="LOCAL" />
       <updated>1575918578684</updated>
     </task>
-    <task id="LOCAL-00004" summary="Back to scratch">
-      <created>1575921280665</created>
+    <task id="LOCAL-00004" summary="s">
+      <created>1575919330610</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1575921280665</updated>
+      <updated>1575919330610</updated>
     </task>
-    <task id="LOCAL-00005" summary="Commit to UF">
-      <created>1575924103467</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1575924103467</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -261,9 +246,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="s" />
-    <MESSAGE value="Back to scratch" />
-    <MESSAGE value="Commit to UF" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit to UF" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
