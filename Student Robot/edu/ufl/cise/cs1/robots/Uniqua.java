@@ -19,12 +19,12 @@ public class Uniqua extends TeamRobot implements Droid{
 
     public void run() {
         while (true) {
-//            turnRight(90);
-//            ahead(100);
-//            turnGunRight(360);
-//            turnRight(90);
-//            ahead(100);
-//            turnGunRight(360);
+            turnRight(90);
+            ahead(100);
+            turnGunRight(360);
+            turnRight(90);
+            ahead(100);
+            turnGunRight(360);
         }
     }
 
@@ -54,15 +54,15 @@ public class Uniqua extends TeamRobot implements Droid{
         }
     }
 
-    public void onScannedRobot(ScannedRobotEvent e) {
-        if(isTeammate(e.getName())) {
-            scan();
-        }
-        else {
-            setAhead(100);
-            fire(3);
-        }
-    }
+//    public void onScannedRobot(ScannedRobotEvent e) {
+//        if(isTeammate(e.getName())) {
+//            scan();
+//        }
+//        else {
+//            setAhead(100);
+//            fire(3);
+//        }
+//    }
 
 
     public void onHitByBullet(HitByBulletEvent e) {
