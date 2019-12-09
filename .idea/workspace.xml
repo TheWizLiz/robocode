@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="">
+    <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="Changed body color">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +28,6 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="256" />
-    <option name="y" value="147" />
-    <option name="width" value="1773" />
-    <option name="height" value="929" />
-  </component>
   <component name="ProjectId" id="1Uij1bGC0B2ZfYcrG3bOcZ9kVq2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,6 +35,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -58,7 +53,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="AndroidRunConfigurationType">
+    <configuration default="true" type="Applet">
+      <option name="HEIGHT" value="0" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="WIDTH" value="0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -87,7 +90,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
       <option name="TESTING_TYPE" value="0" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
@@ -113,19 +116,12 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet">
-      <option name="HEIGHT" value="0" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="WIDTH" value="0" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Robocode" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="10" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="robocode.Robocode" />
       <module name="Robocode" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/exec" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/exec" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -194,7 +190,16 @@
       <workItem from="1523935677293" duration="797000" />
       <workItem from="1523937913261" duration="21000" />
       <workItem from="1575846102795" duration="184000" />
+      <workItem from="1575911008347" duration="3851000" />
     </task>
+    <task id="LOCAL-00001" summary="Changed body color">
+      <created>1575848947759</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575848947760</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,106 +213,70 @@
       <collection />
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed body color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed body color" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="904" y="176" key="#Project_Structure" timestamp="1575848778122">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state x="904" y="176" key="#Project_Structure/0.0.3840.2060@0.0.3840.2060" timestamp="1575848778122" />
+    <state x="1340" y="401" width="1930" height="1367" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575848768655">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state x="1340" y="401" width="1930" height="1367" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575848768655" />
     <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1575846108253">
       <screen x="0" y="0" width="3840" height="2060" />
     </state>
     <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575846108253" />
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" timestamp="1575846104243">
+    <state x="633" y="172" key="CommitChangelistDialog2" timestamp="1575848946470">
       <screen x="0" y="0" width="3840" height="2060" />
     </state>
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575846104243" />
+    <state x="633" y="172" key="CommitChangelistDialog2/0.0.3840.2060@0.0.3840.2060" timestamp="1575848946470" />
+    <state width="3730" height="643" key="GridCell.Tab.0.bottom" timestamp="1575914839874">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.0.bottom/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839874" />
+    <state width="3730" height="643" key="GridCell.Tab.0.center" timestamp="1575914839873">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.0.center/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839873" />
+    <state width="3730" height="643" key="GridCell.Tab.0.left" timestamp="1575914839872">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.0.left/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839872" />
+    <state width="3730" height="643" key="GridCell.Tab.0.right" timestamp="1575914839874">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.0.right/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839874" />
+    <state width="3730" height="643" key="GridCell.Tab.1.bottom" timestamp="1575914839874">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.bottom/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839874" />
+    <state width="3730" height="643" key="GridCell.Tab.1.center" timestamp="1575914839874">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.center/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839874" />
+    <state width="3730" height="643" key="GridCell.Tab.1.left" timestamp="1575914839874">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.left/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839874" />
+    <state width="3730" height="643" key="GridCell.Tab.1.right" timestamp="1575914839874">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.right/0.0.3840.2060@0.0.3840.2060" timestamp="1575914839874" />
+    <state x="904" y="363" key="Vcs.Push.Dialog.v2" timestamp="1575848954996">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state x="904" y="363" key="Vcs.Push.Dialog.v2/0.0.3840.2060@0.0.3840.2060" timestamp="1575848954996" />
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" timestamp="1575911104116">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575911104116" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Python 2.7.13 (C:\Python27\python.exe) interpreter library</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>IntelliJ IDEA IU-172.3757.52</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Robocode</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>robocode-libs</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
