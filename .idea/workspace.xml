@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="New change">
+    <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,20 +13,6 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Robocode" />
@@ -40,6 +27,12 @@
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="256" />
+    <option name="y" value="147" />
+    <option name="width" value="1773" />
+    <option name="height" value="929" />
   </component>
   <component name="ProjectId" id="1Uij1bGC0B2ZfYcrG3bOcZ9kVq2" />
   <component name="ProjectViewState">
@@ -63,18 +56,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Jeremiah Blanchard\IdeaProjects\Robocode\.idea" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidRunConfigurationType">
@@ -186,6 +167,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -201,40 +194,11 @@
       <workItem from="1523935677293" duration="797000" />
       <workItem from="1523937913261" duration="21000" />
       <workItem from="1575846102795" duration="184000" />
-      <workItem from="1575905151705" duration="4068000" />
     </task>
-    <task id="LOCAL-00001" summary="Color Change">
-      <created>1575848693787</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1575848693787</updated>
-    </task>
-    <task id="LOCAL-00002" summary="New change">
-      <created>1575914790651</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1575914790651</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -243,11 +207,6 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Color Change" />
-    <MESSAGE value="New change" />
-    <option name="LAST_COMMIT_MESSAGE" value="New change" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1575846108253">
