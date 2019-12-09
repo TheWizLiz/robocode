@@ -13,7 +13,7 @@ import static robocode.util.Utils.normalRelativeAngleDegrees;
 
 public class Tyrone extends TeamRobot implements Droid {
 
-    public void goToCorner() {
+    /* public void goToCorner() {
 
         turnRight(normalRelativeAngleDegrees(0 - getHeading()));
 
@@ -21,7 +21,7 @@ public class Tyrone extends TeamRobot implements Droid {
         turnLeft(90);
         ahead(2000);
         turnGunLeft(90);
-    }
+    } */
 
     public void run() {
         setBodyColor(Color.cyan);
@@ -35,27 +35,24 @@ public class Tyrone extends TeamRobot implements Droid {
 
         setTurnRadarRight(Double.POSITIVE_INFINITY);
 
-        while (true) {
+        /* while (true) {
 
             ahead(100);
             turnGunRight(360);
             back(100);
-            turnGunRight(360);
+            turnGunRight(360); */
         }
-    }
 
     public void onHitRobot(HitRobotEvent e) {
         if (isTeammate(e.getName())) {
             back(50);
         }
-        if (e.getBearing() > -10 && e.getBearing() < 10) {
             fire(3);
-            setMaxVelocity(100);
-            ahead(1000);
+            setMaxVelocity(4);
+            ahead(400);
 
 
         }
-    }
 
     public void onHitWall(HitWallEvent e) {
 
@@ -81,16 +78,17 @@ public class Tyrone extends TeamRobot implements Droid {
             if (theta <= 180) {
                 turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
                 ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
-                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 8)
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10)
                     fire(1);
             } else {
                 turnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
                 ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
-                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 8)
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10)
                     fire(1);
+            }
+            setFire(3);
 
             }
-        }
         // Set our colors
         else if (e.getMessage() instanceof RobotColors) {
             RobotColors c = (RobotColors) e.getMessage();
