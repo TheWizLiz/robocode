@@ -14,6 +14,12 @@ public class Pablo extends TeamRobot implements Droid {
         setGunColor(Color.PINK);
     }
 
+    public void onHitRobot(HitRobotEvent e) {
+        if (isTeammate(e.getName())) {
+            back(15);
+        }
+    }
+
     public void onMessageReceived(MessageEvent e) {
         if (e.getMessage() instanceof Point) {
             Point p = (Point) e.getMessage();
