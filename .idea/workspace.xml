@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -26,6 +28,12 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="256" />
+    <option name="y" value="147" />
+    <option name="width" value="1773" />
+    <option name="height" value="929" />
+  </component>
   <component name="ProjectId" id="1Uij1bGC0B2ZfYcrG3bOcZ9kVq2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,6 +41,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -184,7 +193,7 @@
       <workItem from="1523932479255" duration="301000" />
       <workItem from="1523935677293" duration="797000" />
       <workItem from="1523937913261" duration="21000" />
-      <workItem from="1575846102795" duration="633000" />
+      <workItem from="1575846102795" duration="184000" />
     </task>
     <servers />
   </component>
@@ -204,22 +213,6 @@
       <screen x="0" y="0" width="3840" height="2060" />
     </state>
     <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575846108253" />
-    <state width="3730" height="517" key="GridCell.Tab.0.bottom" timestamp="1575846510437">
-      <screen x="0" y="0" width="3840" height="2060" />
-    </state>
-    <state width="3730" height="517" key="GridCell.Tab.0.bottom/0.0.3840.2060@0.0.3840.2060" timestamp="1575846510437" />
-    <state width="3730" height="517" key="GridCell.Tab.0.center" timestamp="1575846510436">
-      <screen x="0" y="0" width="3840" height="2060" />
-    </state>
-    <state width="3730" height="517" key="GridCell.Tab.0.center/0.0.3840.2060@0.0.3840.2060" timestamp="1575846510436" />
-    <state width="3730" height="517" key="GridCell.Tab.0.left" timestamp="1575846510435">
-      <screen x="0" y="0" width="3840" height="2060" />
-    </state>
-    <state width="3730" height="517" key="GridCell.Tab.0.left/0.0.3840.2060@0.0.3840.2060" timestamp="1575846510435" />
-    <state width="3730" height="517" key="GridCell.Tab.0.right" timestamp="1575846510437">
-      <screen x="0" y="0" width="3840" height="2060" />
-    </state>
-    <state width="3730" height="517" key="GridCell.Tab.0.right/0.0.3840.2060@0.0.3840.2060" timestamp="1575846510437" />
     <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" timestamp="1575846104243">
       <screen x="0" y="0" width="3840" height="2060" />
     </state>
