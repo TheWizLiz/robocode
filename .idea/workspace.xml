@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="s">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,12 +26,6 @@
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="256" />
-    <option name="y" value="147" />
-    <option name="width" value="1773" />
-    <option name="height" value="929" />
   </component>
   <component name="ProjectId" id="1Uij1bGC0B2ZfYcrG3bOcZ9kVq2" />
   <component name="ProjectViewState">
@@ -194,7 +187,7 @@
       <workItem from="1523935677293" duration="797000" />
       <workItem from="1523937913261" duration="21000" />
       <workItem from="1575846102795" duration="184000" />
-      <workItem from="1575915260359" duration="1242000" />
+      <workItem from="1575915260359" duration="3750000" />
     </task>
     <task id="LOCAL-00001" summary="s">
       <created>1575915870573</created>
@@ -203,7 +196,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575915870573</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="s">
+      <created>1575916588993</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575916588993</updated>
+    </task>
+    <task id="LOCAL-00003" summary="s">
+      <created>1575918578684</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575918578684</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,14 +240,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1575846108253">
-      <screen x="0" y="0" width="3840" height="2060" />
-    </state>
-    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575846108253" />
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" timestamp="1575846104243">
-      <screen x="0" y="0" width="3840" height="2060" />
-    </state>
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575846104243" />
+    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
+    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" />
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" />
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

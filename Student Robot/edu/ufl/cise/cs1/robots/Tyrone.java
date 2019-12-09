@@ -33,6 +33,23 @@ public class Tyrone extends TeamRobot implements Droid {
             } */
         }
 
+    public void onHitRobot(HitRobotEvent e) {
+        if (isTeammate(e.getName())) {
+            back(50);
+        }
+        setMaxVelocity(100);
+        ahead(1000);
+        fire(3);
+
+    }
+
+    public void onHitWall(HitWallEvent e) {
+
+            turnRight(180);
+            setMaxVelocity(4);
+            ahead(300);
+    }
+
     public void onMessageReceived(MessageEvent e) {
         // Fire at a point
         if (e.getMessage() instanceof Point) {
@@ -46,10 +63,21 @@ public class Tyrone extends TeamRobot implements Droid {
             // Turn gun to target
             turnGunRight(normalRelativeAngleDegrees(theta - getGunHeading()));
             // Fire hard!
-            ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())));
-            if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) > 8)
-                fire(3);
+
+            if (theta <= 180) {
+                turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
+                ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 8)
+                    fire(1);
             }
+            else {
+                turnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
+                ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 8)
+                    fire(1);
+
+            }
+        }
         // Set our colors
         else if (e.getMessage() instanceof RobotColors) {
             RobotColors c = (RobotColors) e.getMessage();
