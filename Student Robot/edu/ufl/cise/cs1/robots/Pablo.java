@@ -12,7 +12,6 @@ public class Pablo extends TeamRobot implements Droid {
     public void run() {
         setBodyColor(Color.PINK);
         setGunColor(Color.PINK);
-
     }
 
     public void onMessageReceived(MessageEvent e) {
