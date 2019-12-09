@@ -47,7 +47,10 @@ public class Tyrone extends TeamRobot implements Droid {
             turnGunRight(normalRelativeAngleDegrees(theta - getGunHeading()));
             // Fire hard!
             ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())));
-        } // Set our colors
+            if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) > 8)
+                fire(3);
+            }
+        // Set our colors
         else if (e.getMessage() instanceof RobotColors) {
             RobotColors c = (RobotColors) e.getMessage();
 
