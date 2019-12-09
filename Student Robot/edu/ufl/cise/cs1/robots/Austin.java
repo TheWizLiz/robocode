@@ -8,7 +8,7 @@ import sampleteam.RobotColors;
 import java.awt.*;
 import java.io.IOException;
 
-public class Austin extends TeamRobot
+public class Austin extends TeamRobot implements BorderSentry
 {
 
     public int direction = 1;
