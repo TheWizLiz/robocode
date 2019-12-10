@@ -11,6 +11,9 @@ import java.awt.*;
 
 import static robocode.util.Utils.normalRelativeAngleDegrees;
 
+
+
+
 public class Tyrone extends TeamRobot implements Droid {
 
     /* public void goToCorner() {
@@ -24,6 +27,7 @@ public class Tyrone extends TeamRobot implements Droid {
     } */
 
     public void run() {
+        // while running our team color is cyan
         setBodyColor(Color.cyan);
         setGunColor(Color.cyan);
         setRadarColor(Color.cyan);
@@ -45,10 +49,10 @@ public class Tyrone extends TeamRobot implements Droid {
 
     public void onHitRobot(HitRobotEvent e) {
         if (isTeammate(e.getName())) {
-            back(50);
+            back(50); // if i hit a teamate i back up
         }
             fire(3);
-            setMaxVelocity(4);
+            setMaxVelocity(4); // charge the robots if it is an enemy
             ahead(400);
 
 
@@ -57,13 +61,13 @@ public class Tyrone extends TeamRobot implements Droid {
     public void onHitWall(HitWallEvent e) {
 
         turnRight(180);
-        setMaxVelocity(4);
+        setMaxVelocity(8);
         ahead(300);
     }
 
     public void onMessageReceived(MessageEvent e) {
         // Fire at a point
-        if (e.getMessage() instanceof Point) {
+        if (e.getMessage() instanceof Point) { // I implemented some of the code from the MYFirstDroid getting started robot
             Point p = (Point) e.getMessage();
             // Calculate x and y to target
             double dx = p.getX() - this.getX();
@@ -71,9 +75,9 @@ public class Tyrone extends TeamRobot implements Droid {
             // Calculate angle to target
             double theta = Math.toDegrees(Math.atan2(dx, dy));
 
-            // Turn gun to target
+            // use theta to calcualte the angle needed to turn my gun towards the target
             turnGunRight(normalRelativeAngleDegrees(theta - getGunHeading()));
-            // Fire hard!
+
 
             if (theta <= 180) {
                 turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
@@ -86,7 +90,8 @@ public class Tyrone extends TeamRobot implements Droid {
                 if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10)
                     fire(1);
             }
-            setFire(3);
+            ahead(300);
+            fire(3);
 
             }
         // Set our colors
