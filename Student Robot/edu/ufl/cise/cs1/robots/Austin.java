@@ -12,6 +12,8 @@ import java.util.Vector;
 public class Austin extends TeamRobot implements BorderSentry
 {
 
+    double enemyDirection;
+
     public void run() {
 
         RobotColors c = new RobotColors();
@@ -72,15 +74,12 @@ public class Austin extends TeamRobot implements BorderSentry
         setTurnRadarRightRadians(radarTurn);
 
         // Calculate enemy bearing
-        double enemyBearing = this.getHeading() + e.getBearing();
+        enemyDirection = this.getHeading() + e.getBearing();
         // Calculate enemy's position
-        double enemyX = getX() + e.getDistance() * Math.sin(Math.toRadians(enemyBearing));
-        double enemyY = getY() + e.getDistance() * Math.cos(Math.toRadians(enemyBearing));
+        double enemyX = getX() + e.getDistance() * Math.sin(Math.toRadians(enemyDirection));
+        double enemyY = getY() + e.getDistance() * Math.cos(Math.toRadians(enemyDirection));
 
-        setTurnGunRight(enemyBearing);
-
-        if (Math.abs(this.getGunHeading() - e.getBearing()) < 20)
-            smartFire(e.getDistance());
+        smartFire(e.getDistance());
 
         try {
             // Send enemy position to teammates
@@ -92,13 +91,24 @@ public class Austin extends TeamRobot implements BorderSentry
     }
 
     public void onHitByBullet(HitByBulletEvent e) {
-        turnLeft(90 - e.getBearing());
+
+        turnLeft(90);
+        ahead(50);
+        
     }
 
 
     public void onHitRobot(HitRobotEvent e) {
 
+        turnLeft(90);
         back(50);
+
+    }
+
+    public void onHitWall(HitWallEvent e) {
+
+        turnLeft(90);
+        ahead(50);
 
     }
 
