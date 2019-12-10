@@ -52,6 +52,8 @@ public class Pablo extends TeamRobot implements Droid {
                 }
             }
 
+            fire(3);
+
         } else if (e.getMessage() instanceof RobotColors) {
             RobotColors c = (RobotColors) e.getMessage();
 
