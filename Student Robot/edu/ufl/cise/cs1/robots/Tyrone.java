@@ -51,7 +51,8 @@ public class Tyrone extends TeamRobot implements Droid {
         if (isTeammate(e.getName())) {
             back(50); // if i hit a teamate i back up
         }
-            fire(3);
+
+            fire(1000);
             setMaxVelocity(4); // charge the robots if it is an enemy
             ahead(400);
 
@@ -64,6 +65,7 @@ public class Tyrone extends TeamRobot implements Droid {
         setMaxVelocity(8);
         ahead(300);
     }
+
 
     public void onMessageReceived(MessageEvent e) {
         // Fire at a point
@@ -82,13 +84,13 @@ public class Tyrone extends TeamRobot implements Droid {
             if (theta <= 180) {
                 turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
                 ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
-                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10)
-                    fire(1);
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 300)
+                    fire(5);
             } else {
                 turnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
                 ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
-                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10)
-                    fire(1);
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 300)
+                    fire(5);
             }
             ahead(300);
             fire(3);
