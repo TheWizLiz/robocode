@@ -7,11 +7,12 @@ import sampleteam.RobotColors;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.Vector;
 
 public class Austin extends TeamRobot implements BorderSentry
 {
 
-    public int direction = 1;
+    double moveAmount; // How much to move
 
     public void run() {
 
@@ -25,13 +26,17 @@ public class Austin extends TeamRobot implements BorderSentry
 
         setColors(c.bodyColor, c.gunColor, c.radarColor, c.bulletColor, c.scanColor);
 
-        //setAdjustGunForRobotTurn(true);
-        //setAdjustRadarForGunTurn(true);
+        setAdjustRadarForGunTurn(true);
+
+        // Initialize moveAmount to the maximum possible for this battlefield.
+        moveAmount = Math.max(getBattleFieldWidth(), getBattleFieldHeight());
 
         try {
             // Send RobotColors object to our entire team
             broadcastMessage(c);
         } catch (IOException ignored) {}
+
+        turnLeft(getHeading() % 90);
 
         do {
             // ...
@@ -39,10 +44,13 @@ public class Austin extends TeamRobot implements BorderSentry
             if ( getRadarTurnRemaining() == 0.0 )
                 setTurnRadarRightRadians( Double.POSITIVE_INFINITY );
 
-                setTurnRight(5);
-                ahead(5);
+            // Move up the wall
+            ahead(moveAmount);
+            // Turn to the next wall
+            turnRight(90);
 
             execute();
+
         } while ( true );
     }
     public void onScannedRobot(ScannedRobotEvent e) {
@@ -78,6 +86,10 @@ public class Austin extends TeamRobot implements BorderSentry
         double enemyX = getX() + e.getDistance() * Math.sin(Math.toRadians(enemyBearing));
         double enemyY = getY() + e.getDistance() * Math.cos(Math.toRadians(enemyBearing));
 
+        setTurnGunRight(enemyBearing);
+
+        smartFire(e.getDistance());
+
         try {
             // Send enemy position to teammates
             broadcastMessage(new Point(enemyX, enemyY));
@@ -88,7 +100,23 @@ public class Austin extends TeamRobot implements BorderSentry
     }
 
     public void onHitByBullet(HitByBulletEvent e) {
-		turnLeft(90 - e.getBearing());
-	}
+        turnLeft(90 - e.getBearing());
+    }
 
+
+    public void onHitRobot(HitRobotEvent e) {
+
+        back(50);
+
+    }
+
+    public void smartFire(double robotDistance) {
+        if (robotDistance > 100 || getEnergy() < 15) {
+            fire(1);
+        } else if (robotDistance > 50) {
+            fire(2);
+        } else {
+            fire(3);
+        }
+    }
 }
