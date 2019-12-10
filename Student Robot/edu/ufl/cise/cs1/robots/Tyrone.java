@@ -13,7 +13,7 @@ import static robocode.util.Utils.normalRelativeAngleDegrees;
 
 
 
-
+// my robot is a droid
 public class Tyrone extends TeamRobot implements Droid {
 
     /* public void goToCorner() {
@@ -53,17 +53,17 @@ public class Tyrone extends TeamRobot implements Droid {
         }
 
             fire(1000);
-            setMaxVelocity(4); // charge the robots if it is an enemy
-            ahead(400);
+            setMaxVelocity(100); // charge the robots if it is an enemy
+            ahead(1000);
 
 
         }
-
+    // when my robot hits a wall, i want it to turn away from the wall
     public void onHitWall(HitWallEvent e) {
 
         turnRight(180);
         setMaxVelocity(8);
-        ahead(300);
+        ahead(200);
     }
 
 
