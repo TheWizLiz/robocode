@@ -8,6 +8,8 @@ import sampleteam.RobotColors;
 import java.awt.*;
 import java.io.IOException;
 
+import static robocode.util.Utils.normalRelativeAngleDegrees;
+
 
 /*
 
@@ -21,7 +23,7 @@ Code created with heavy inspiration and adaption of the BorderGuard robot, Walls
 public class Austin extends TeamRobot implements BorderSentry
 {
 
-    double enemyDirection; //Store the enemy's current location
+    int numTeammates = 0;
 
     public void run() { //Called at the start of every turn
 
@@ -46,22 +48,29 @@ public class Austin extends TeamRobot implements BorderSentry
             broadcastMessage(c);
         } catch (IOException ignored) {}
 
+        turnRight(normalRelativeAngleDegrees(0 - getHeading())); //Turn to face left
+
         do {
+
             // Turn the radar if we have no more turn, starts it if it stops and at the start of round
             if ( getRadarTurnRemaining() == 0.0 )
                 setTurnRadarRightRadians( Double.POSITIVE_INFINITY );
 
-            //Have robot spin in slow circle while running
-            setTurnRight(5);
-            setAhead(5);
+            // Turn the gun if we have no more turn, starts it if it stops and at the start of round
+            if ( getGunTurnRemaining() == 0.0 )
+                setTurnGunRightRadians( Double.POSITIVE_INFINITY );
 
             execute();
 
+            setAhead(1200);
+
         } while ( true );
     }
-    public void onScannedRobot(ScannedRobotEvent e) { //When the robot's scanner sees an enem
+    public void onScannedRobot(ScannedRobotEvent e) { //When the robot's scanner sees an enemy
+
         //Stop if teammate
         if (isTeammate(e.getName())) {
+
             return;
         }
 
@@ -71,8 +80,11 @@ public class Austin extends TeamRobot implements BorderSentry
         //Subtract current radar heading to get the turn required to face the enemy, be sure it is normalized
         double radarTurn = Utils.normalRelativeAngle( angleToEnemy - getRadarHeadingRadians() );
 
+        //Subtract current gun heading to get the turn required to face the enemy, be sure it is normalized
+        double gunTurn = Utils.normalRelativeAngle( angleToEnemy - getGunHeadingRadians() );
+
         //Distance we want to scan from middle of enemy to either side
-        //The 36.0 is how many units from the center of the enemy robot it scans.
+        //The 18.0 is how many units from the center of the enemy robot it scans.
         double extraTurn = Math.min( Math.atan( 18.0 / e.getDistance() ), Rules.RADAR_TURN_RATE_RADIANS );
 
         //Adjust the radar turn so it goes that much further in the direction it is going to turn
@@ -83,17 +95,19 @@ public class Austin extends TeamRobot implements BorderSentry
         else
             radarTurn += extraTurn;
 
-        //Turn the radar
+        //Turn the radar and gun
         setTurnRadarRightRadians(radarTurn);
+        setTurnGunRightRadians(gunTurn);
 
         //Calculate enemy bearing
-        enemyDirection = this.getHeading() + e.getBearing();
+        double enemyDirection = this.getHeading() + e.getBearing();
         //Calculate enemy's position
         double enemyX = getX() + e.getDistance() * Math.sin(Math.toRadians(enemyDirection));
         double enemyY = getY() + e.getDistance() * Math.cos(Math.toRadians(enemyDirection));
 
-        //Fire the gun
-        calculatedFire(e.getDistance());
+        //Fire the gun if there are less than 2 teammates left
+        if (numTeammates < 2)
+            calculatedFire(e.getDistance());
 
 
         //Send the enemy's position to the drones on the team
@@ -105,32 +119,37 @@ public class Austin extends TeamRobot implements BorderSentry
         }
     }
 
-    public void onHitByBullet(HitByBulletEvent e) { //If the robot is hit with a bullet
-
-        //Turn left and move forwards
-        turnLeft(90);
-        ahead(50);
-
-    }
-
-
     public void onHitRobot(HitRobotEvent e) { //If the robot hits another robot, or is hit by a robot
 
-        //Turn left and back up
-        turnLeft(90);
-        back(50);
+        //Back up
+        setAhead(-1200);
 
     }
 
-    public void onHitWall(HitWallEvent e) { //If the robot hits a wall
+    public void onHitWall(HitWallEvent e) { //When the robot hits the wall at the other end of the battlefield
 
         //Turn left and move forwards
-        turnLeft(90);
+        turnRight(90);
         ahead(50);
 
     }
 
-    public void calculatedFire(double robotDistance) {
+    public void onMessageReceived(MessageEvent e) {
+        if (e.getMessage() instanceof String)
+            numTeammates++;
+
+    }
+
+    public void onRobotDeath(DeathEvent e) {
+
+        try {
+            // Send Robot Name to our entire team to signify death
+            broadcastMessage(this.getName());
+        } catch (IOException ignored) {}
+
+    }
+
+    public void calculatedFire(double robotDistance) { //Smart targeting code inspired by Corners bot
         if (robotDistance > 50 || getEnergy() < 15) {
             fire(1);
         } else if (robotDistance > 25) {

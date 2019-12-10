@@ -52,6 +52,14 @@ public class Uniqua extends TeamRobot{
         }
     }
 
+    public void onRobotDeath(RobotDeathEvent death) {
+
+        try {
+            broadcastMessage(this.getName());
+        } catch (Exception notWorking) {}
+
+    }
+
     public void onHitByBullet(HitByBulletEvent e) {
         back(25);
     }

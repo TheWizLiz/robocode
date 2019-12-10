@@ -7,6 +7,7 @@ import sun.plugin2.message.Message;
 
 import static robocode.util.Utils.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class Pablo extends TeamRobot implements Droid {
     int turn;
@@ -32,6 +33,14 @@ public class Pablo extends TeamRobot implements Droid {
         turnRight(lastEnemyDirection);
         fire(3);
         ahead(200);
+    }
+
+    public void onRobotDeath(RobotDeathEvent e) {
+
+        try {
+            broadcastMessage(this.getName());
+        } catch (Exception f) {}
+
     }
 
     public void onMessageReceived(MessageEvent e) {

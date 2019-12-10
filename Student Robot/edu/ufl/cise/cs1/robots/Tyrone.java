@@ -108,6 +108,14 @@ public class Tyrone extends TeamRobot implements Droid {
         }
     }
 
+    public void onRobotDeath(RobotDeathEvent l) {
+
+        try {
+
+            broadcastMessage(this.getName());
+        } catch (Exception e) {}
+    }
+
     public void onScannedRobot(ScannedRobotEvent e) {
         //
         /* if (stopWhenSeeRobot) {
