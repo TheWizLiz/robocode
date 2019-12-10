@@ -12,8 +12,6 @@ import java.util.Vector;
 public class Austin extends TeamRobot implements BorderSentry
 {
 
-    double moveAmount; // How much to move
-
     public void run() {
 
         RobotColors c = new RobotColors();
@@ -28,15 +26,10 @@ public class Austin extends TeamRobot implements BorderSentry
 
         setAdjustRadarForGunTurn(true);
 
-        // Initialize moveAmount to the maximum possible for this battlefield.
-        moveAmount = Math.max(getBattleFieldWidth(), getBattleFieldHeight());
-
         try {
             // Send RobotColors object to our entire team
             broadcastMessage(c);
         } catch (IOException ignored) {}
-
-        turnLeft(getHeading() % 90);
 
         do {
             // ...
@@ -44,10 +37,8 @@ public class Austin extends TeamRobot implements BorderSentry
             if ( getRadarTurnRemaining() == 0.0 )
                 setTurnRadarRightRadians( Double.POSITIVE_INFINITY );
 
-            // Move up the wall
-            ahead(moveAmount);
-            // Turn to the next wall
-            turnRight(90);
+            setTurnRight(5);
+            setAhead(5);
 
             execute();
 
@@ -88,7 +79,8 @@ public class Austin extends TeamRobot implements BorderSentry
 
         setTurnGunRight(enemyBearing);
 
-        smartFire(e.getDistance());
+        if (Math.abs(this.getGunHeading() - e.getBearing()) < 20)
+            smartFire(e.getDistance());
 
         try {
             // Send enemy position to teammates
