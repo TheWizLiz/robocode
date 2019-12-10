@@ -51,6 +51,7 @@ public class Tyrone extends TeamRobot implements Droid {
         if (isTeammate(e.getName())) {
             back(50); // if i hit a teamate i back up
         }
+
             fire(3);
             setMaxVelocity(4); // charge the robots if it is an enemy
             ahead(400);
@@ -64,6 +65,7 @@ public class Tyrone extends TeamRobot implements Droid {
         setMaxVelocity(8);
         ahead(300);
     }
+
 
     public void onMessageReceived(MessageEvent e) {
         // Fire at a point

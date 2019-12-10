@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="s">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +64,20 @@
       <recent name="C:\Users\Jeremiah Blanchard\IdeaProjects\Robocode\.idea" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet">
-      <option name="HEIGHT" value="0" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="WIDTH" value="0" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration default="true" type="AndroidRunConfigurationType">
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -102,7 +106,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+    <configuration default="true" type="AndroidTestRunConfigurationType">
       <option name="TESTING_TYPE" value="0" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
@@ -126,6 +130,14 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="HEIGHT" value="0" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="WIDTH" value="0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Robocode" type="Application" factoryName="Application">
@@ -174,18 +186,6 @@
       </method>
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -201,7 +201,7 @@
       <workItem from="1523935677293" duration="797000" />
       <workItem from="1523937913261" duration="21000" />
       <workItem from="1575846102795" duration="184000" />
-      <workItem from="1575915260359" duration="12439000" />
+      <workItem from="1575915260359" duration="15365000" />
     </task>
     <task id="LOCAL-00001" summary="s">
       <created>1575915870573</created>
@@ -252,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575933758532</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="s">
+      <created>1575944881722</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575944881722</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,26 +291,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1575945558545" />
-    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575945558545" />
-    <state width="4690" height="517" key="GridCell.Tab.0.bottom" timestamp="1575948420261">
-      <screen x="-4800" y="0" width="4800" height="2498" />
-    </state>
-    <state width="4690" height="517" key="GridCell.Tab.0.bottom/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1575948420261" />
-    <state width="4690" height="517" key="GridCell.Tab.0.center" timestamp="1575948420261">
-      <screen x="-4800" y="0" width="4800" height="2498" />
-    </state>
-    <state width="4690" height="517" key="GridCell.Tab.0.center/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1575948420261" />
-    <state width="4690" height="517" key="GridCell.Tab.0.left" timestamp="1575948420261">
-      <screen x="-4800" y="0" width="4800" height="2498" />
-    </state>
-    <state width="4690" height="517" key="GridCell.Tab.0.left/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1575948420261" />
-    <state width="4690" height="517" key="GridCell.Tab.0.right" timestamp="1575948420261">
-      <screen x="-4800" y="0" width="4800" height="2498" />
-    </state>
-    <state width="4690" height="517" key="GridCell.Tab.0.right/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1575948420261" />
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" timestamp="1575945558545" />
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1575945558545" />
+    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
+    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" />
+    <state width="4690" height="517" key="GridCell.Tab.0.bottom" />
+    <state width="4690" height="517" key="GridCell.Tab.0.bottom/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
+    <state width="4690" height="517" key="GridCell.Tab.0.center" />
+    <state width="4690" height="517" key="GridCell.Tab.0.center/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
+    <state width="4690" height="517" key="GridCell.Tab.0.left" />
+    <state width="4690" height="517" key="GridCell.Tab.0.left/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
+    <state width="4690" height="517" key="GridCell.Tab.0.right" />
+    <state width="4690" height="517" key="GridCell.Tab.0.right/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" />
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
