@@ -23,7 +23,7 @@ Code created with heavy inspiration and adaption of the BorderGuard robot, Walls
 public class Austin extends TeamRobot implements BorderSentry
 {
 
-    int numTeammates = 0;
+    int numTeammates = 3;
 
     public void run() { //Called at the start of every turn
 
@@ -105,8 +105,8 @@ public class Austin extends TeamRobot implements BorderSentry
         double enemyX = getX() + e.getDistance() * Math.sin(Math.toRadians(enemyDirection));
         double enemyY = getY() + e.getDistance() * Math.cos(Math.toRadians(enemyDirection));
 
-        //Fire the gun if there are less than 2 teammates left
-        if (numTeammates < 2)
+        //Fire the gun if there are less than 3 teammates left
+        if (numTeammates < 3)
             calculatedFire(e.getDistance());
 
 
@@ -134,25 +134,16 @@ public class Austin extends TeamRobot implements BorderSentry
 
     }
 
-    public void onMessageReceived(MessageEvent e) {
+    public void onMessageReceived(MessageEvent e) { //If a teammate dies
         if (e.getMessage() instanceof String)
-            numTeammates++;
-
-    }
-
-    public void onRobotDeath(DeathEvent e) {
-
-        try {
-            // Send Robot Name to our entire team to signify death
-            broadcastMessage(this.getName());
-        } catch (IOException ignored) {}
+            numTeammates--; //Decrease the number of teammates
 
     }
 
     public void calculatedFire(double robotDistance) { //Smart targeting code inspired by Corners bot
-        if (robotDistance > 50 || getEnergy() < 15) {
+        if (robotDistance > 100 || getEnergy() < 15) {
             fire(1);
-        } else if (robotDistance > 25) {
+        } else if (robotDistance > 50) {
             fire(2);
         } else {
             fire(3);

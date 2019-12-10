@@ -1,10 +1,10 @@
 #Battle Properties
-#Mon Dec 09 21:24:59 EST 2019
+#Tue Dec 10 18:32:11 EST 2019
 robocode.battle.sentryBorderSize=100
 robocode.battle.numRounds=10
 robocode.battleField.width=1200
 robocode.battle.gunCoolingRate=0.1
 robocode.battle.rules.inactivityTime=450
-robocode.battle.selectedRobots=edu.ufl.cise.cs1.robots.Backyardigans 0*,benchmark.TeamSocket v1
+robocode.battle.selectedRobots=edu.ufl.cise.cs1.robots.IntelliBaes 2.0*,benchmark.TeamSocket v1
 robocode.battle.hideEnemyNames=false
 robocode.battleField.height=1200
