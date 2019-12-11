@@ -1,21 +1,23 @@
+//The student package
 package edu.ufl.cise.cs1.robots;
 
+//Import project code
 import robocode.*;
 import robocode.util.Utils;
 import sampleteam.Point;
 import sampleteam.RobotColors;
-
-import java.awt.*;
-import java.io.IOException;
-
 import static robocode.util.Utils.normalRelativeAngleDegrees;
 
 
+//Import java code
+import java.awt.*;
+import java.io.IOException;
+
 /*
 
-Austin, the BorderSentry team leader robot coded by Gabriel Turmail.
+Austin, the BorderSentry Team Leader Robot coded by Gabriel Turmail.
 
-Code created with heavy inspiration and adaption of the BorderGuard robot, Walls Robot, and MyFirstLeader
+Code created with heavy inspiration and adaption of the BorderGuard, Walls, MyFirstLeader and TrackFire sample robots.
 
  */
 
@@ -23,46 +25,45 @@ Code created with heavy inspiration and adaption of the BorderGuard robot, Walls
 public class Austin extends TeamRobot implements BorderSentry
 {
 
-    int numTeammates = 3;
+    int numTeammates = 3; //Variable to track number of alive teammates
 
     public void run() { //Called at the start of every turn
 
         //Create a map of the colors
-        RobotColors c = new RobotColors();
+        RobotColors colorMap = new RobotColors();
 
-        c.bodyColor = Color.cyan;
-        c.gunColor = Color.cyan;
-        c.radarColor = Color.cyan;
-        c.scanColor = Color.cyan;
-        c.bulletColor = Color.cyan;
+        colorMap.bodyColor = Color.cyan;
+        colorMap.gunColor = Color.cyan;
+        colorMap.radarColor = Color.cyan;
+        colorMap.scanColor = Color.cyan;
+        colorMap.bulletColor = Color.cyan;
 
         //Set the robot's colors
-        setColors(c.bodyColor, c.gunColor, c.radarColor, c.bulletColor, c.scanColor);
-
-        //Allow the radar to turn separate from the gun
-        setAdjustRadarForGunTurn(true);
+        setColors(colorMap.bodyColor, colorMap.gunColor, colorMap.radarColor, colorMap.bulletColor, colorMap.scanColor);
 
         //Broadcast the colors to the drones
         try {
-            // Send RobotColors object to our entire team
-            broadcastMessage(c);
+            broadcastMessage(colorMap);
         } catch (IOException ignored) {}
+
+        setAdjustRadarForGunTurn(true); //Allow the radar to turn separate from the gun
 
         turnRight(normalRelativeAngleDegrees(0 - getHeading())); //Turn to face left
 
+        //Do while loop to control constant game functions
         do {
 
-            // Turn the radar if we have no more turn, starts it if it stops and at the start of round
+            // Turn the radar to the right forever if it has nowhere left to turn (when it looses its target)
             if ( getRadarTurnRemaining() == 0.0 )
                 setTurnRadarRightRadians( Double.POSITIVE_INFINITY );
 
-            // Turn the gun if we have no more turn, starts it if it stops and at the start of round
+            // Turn the gun to the right forever if it has nowhere left to turn (when it looses its target)
             if ( getGunTurnRemaining() == 0.0 )
                 setTurnGunRightRadians( Double.POSITIVE_INFINITY );
 
-            execute();
+            execute(); //Execute the turn commands of all functions
 
-            setAhead(1200);
+            setAhead(1200); //Set the robot to move forwards across the whole map
 
         } while ( true );
     }
@@ -74,36 +75,33 @@ public class Austin extends TeamRobot implements BorderSentry
             return;
         }
 
-        //Absolute angle towards target
+        //Calculate the absolute angle towards the scanned robot
         double angleToEnemy = getHeadingRadians() + e.getBearingRadians();
 
-        //Subtract current radar heading to get the turn required to face the enemy, be sure it is normalized
+        //Subtract the current radar heading from the absolute heading to get the turn required to face the enemy
         double radarTurn = Utils.normalRelativeAngle( angleToEnemy - getRadarHeadingRadians() );
 
-        //Subtract current gun heading to get the turn required to face the enemy, be sure it is normalized
+        //Subtract the current gun heading from the absolute heading to get the turn required to face the enemy
         double gunTurn = Utils.normalRelativeAngle( angleToEnemy - getGunHeadingRadians() );
 
-        //Distance we want to scan from middle of enemy to either side
-        //The 18.0 is how many units from the center of the enemy robot it scans.
-        double extraTurn = Math.min( Math.atan( 18.0 / e.getDistance() ), Rules.RADAR_TURN_RATE_RADIANS );
+        //Add extra distance to the side of the enemy to keep track of it as it moves
+        double extraTurn = Math.min( Math.atan( 36.0 / e.getDistance() ), Rules.RADAR_TURN_RATE_RADIANS );
 
-        //Adjust the radar turn so it goes that much further in the direction it is going to turn
-        //Basically if we were going to turn it left, turn it even more left, if right, turn more right.
-        //This allows us to overshoot our enemy so that we get a good sweep that will not slip.
+        //Add the extra distance if positive, subtract if negative
         if (radarTurn < 0)
             radarTurn -= extraTurn;
         else
             radarTurn += extraTurn;
 
-        //Turn the radar and gun
+        //Turn the radar and gun their respective degrees
         setTurnRadarRightRadians(radarTurn);
         setTurnGunRightRadians(gunTurn);
 
-        //Calculate enemy bearing
+        //Calculate the enemy's absolute bearing
         double enemyDirection = this.getHeading() + e.getBearing();
-        //Calculate enemy's position
-        double enemyX = getX() + e.getDistance() * Math.sin(Math.toRadians(enemyDirection));
-        double enemyY = getY() + e.getDistance() * Math.cos(Math.toRadians(enemyDirection));
+        //Calculate enemy's x and y positions
+        double enemyX = getX() + e.getDistance() * Math.sin(angleToEnemy);
+        double enemyY = getY() + e.getDistance() * Math.cos(angleToEnemy);
 
         //Fire the gun if there are less than 3 teammates left
         if (numTeammates < 4)
