@@ -106,7 +106,7 @@ public class Austin extends TeamRobot implements BorderSentry
         double enemyY = getY() + e.getDistance() * Math.cos(Math.toRadians(enemyDirection));
 
         //Fire the gun if there are less than 3 teammates left
-        if (numTeammates < 3)
+        if (numTeammates < 4)
             calculatedFire(e.getDistance());
 
 
@@ -141,9 +141,9 @@ public class Austin extends TeamRobot implements BorderSentry
     }
 
     public void calculatedFire(double robotDistance) { //Smart targeting code inspired by Corners bot
-        if (robotDistance > 100 || getEnergy() < 15) {
+        if (robotDistance > 50 || getEnergy() < 15) {
             fire(1);
-        } else if (robotDistance > 50) {
+        } else if (robotDistance > 25) {
             fire(2);
         } else {
             fire(3);

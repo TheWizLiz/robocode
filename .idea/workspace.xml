@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4175a2ef-65fa-4545-8a68-11cdb19918b4" name="Default" comment="s">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Tyrone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Uniqua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Student Robot/edu/ufl/cise/cs1/robots/Austin.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,20 +64,16 @@
       <recent name="C:\Users\Jeremiah Blanchard\IdeaProjects\Robocode\.idea" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
-    <configuration default="true" type="AndroidRunConfigurationType">
+    <configuration default="true" type="Applet">
+      <option name="HEIGHT" value="0" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="WIDTH" value="0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -108,7 +102,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
       <option name="TESTING_TYPE" value="0" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
@@ -132,14 +126,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="HEIGHT" value="0" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="WIDTH" value="0" />
-      <method v="2">
-        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Robocode" type="Application" factoryName="Application">
@@ -187,6 +173,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -308,18 +306,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
-    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" />
-    <state width="4690" height="517" key="GridCell.Tab.0.bottom" />
-    <state width="4690" height="517" key="GridCell.Tab.0.bottom/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
-    <state width="4690" height="517" key="GridCell.Tab.0.center" />
-    <state width="4690" height="517" key="GridCell.Tab.0.center/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
-    <state width="4690" height="517" key="GridCell.Tab.0.left" />
-    <state width="4690" height="517" key="GridCell.Tab.0.left/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
-    <state width="4690" height="517" key="GridCell.Tab.0.right" />
-    <state width="4690" height="517" key="GridCell.Tab.0.right/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" />
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" />
-    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" />
+    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576021653245" />
+    <state x="1545" y="850" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1576021653245" />
+    <state width="3730" height="643" key="GridCell.Tab.0.bottom" timestamp="1576023683762">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="4690" height="517" key="GridCell.Tab.0.bottom/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1576021653245" />
+    <state width="3730" height="643" key="GridCell.Tab.0.bottom/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683762" />
+    <state width="3730" height="643" key="GridCell.Tab.0.center" timestamp="1576023683762">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="4690" height="517" key="GridCell.Tab.0.center/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1576021653245" />
+    <state width="3730" height="643" key="GridCell.Tab.0.center/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683762" />
+    <state width="3730" height="643" key="GridCell.Tab.0.left" timestamp="1576023683762">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="4690" height="517" key="GridCell.Tab.0.left/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1576021653245" />
+    <state width="3730" height="643" key="GridCell.Tab.0.left/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683762" />
+    <state width="3730" height="643" key="GridCell.Tab.0.right" timestamp="1576023683762">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="4690" height="517" key="GridCell.Tab.0.right/0.0.3840.2060/-4800.0.4800.2498@-4800.0.4800.2498" timestamp="1576021653245" />
+    <state width="3730" height="643" key="GridCell.Tab.0.right/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683762" />
+    <state width="3730" height="643" key="GridCell.Tab.1.bottom" timestamp="1576023683763">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.bottom/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683763" />
+    <state width="3730" height="643" key="GridCell.Tab.1.center" timestamp="1576023683762">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.center/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683762" />
+    <state width="3730" height="643" key="GridCell.Tab.1.left" timestamp="1576023683762">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.left/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683762" />
+    <state width="3730" height="643" key="GridCell.Tab.1.right" timestamp="1576023683762">
+      <screen x="0" y="0" width="3840" height="2060" />
+    </state>
+    <state width="3730" height="643" key="GridCell.Tab.1.right/0.0.3840.2060/-4800.0.4800.2498@0.0.3840.2060" timestamp="1576023683762" />
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog" timestamp="1576021653245" />
+    <state x="1161" y="590" key="com.intellij.ide.util.TipDialog/0.0.3840.2060@0.0.3840.2060" timestamp="1576021653245" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
