@@ -6,14 +6,15 @@ import java.awt.*;
 
 public class Uniqua extends TeamRobot{
     public void setColors() {
-        setGunColor(Color.pink);
-        setBodyColor(Color.pink);
+        setGunColor(Color.cyan);
+        setBodyColor(Color.cyan);
         setRadarColor(Color.cyan);          //Team Color
         setBulletColor(Color.cyan);         //Team Color
-        setScanColor(Color.pink);
+        setScanColor(Color.cyan);
     }
 
     public void run() {
+        setColors();
         while (true) {
             turnRight(90);
             turnGunRight(360);
