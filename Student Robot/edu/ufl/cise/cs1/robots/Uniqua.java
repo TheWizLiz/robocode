@@ -72,7 +72,7 @@ public class Uniqua extends TeamRobot{
             sampleteam.Point p = (Point) e.getMessage();
             double enemyX = p.getX() - this.getX();
             double enemyY = p.getY() - this.getY();
-            double enemyBearing = Math.toDegrees(Math.atan2(enemyY, enemyY));
+            double enemyBearing = Math.toDegrees(Math.atan2(enemyX, enemyY));
 
             setTurnRight(normalRelativeAngleDegrees(enemyBearing - getHeading()));
             setTurnGunRight(normalRelativeAngleDegrees(enemyBearing - getGunHeading()));
