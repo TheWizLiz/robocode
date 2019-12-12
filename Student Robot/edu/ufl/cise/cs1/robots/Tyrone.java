@@ -35,7 +35,6 @@ public class Tyrone extends TeamRobot implements Droid {
         setScanColor(Color.cyan);
 
         setAdjustGunForRobotTurn(true);
-        setAdjustRadarForGunTurn(true);
 
         setTurnRadarRight(Double.POSITIVE_INFINITY);
 
@@ -49,21 +48,26 @@ public class Tyrone extends TeamRobot implements Droid {
 
     public void onHitRobot(HitRobotEvent e) {
         if (isTeammate(e.getName())) {
-            back(50); // if i hit a teamate i back up
+            back(50); // if i hit a teammate i back up
         }
 
-            fire(1000);
+        if (this.getEnergy() > 25) { // check if there is enough health to charge
+            fire(3);
             setMaxVelocity(100); // charge the robots if it is an enemy
-            ahead(1000);
+            setAhead(1000);
+        } else {
+            fire(3);
+            back(50);
+        }
 
 
         }
     // when my robot hits a wall, i want it to turn away from the wall
     public void onHitWall(HitWallEvent e) {
 
-        turnRight(180);
+        setTurnRight(180);
         setMaxVelocity(8);
-        ahead(200);
+        setAhead(200);
     }
 
 
@@ -82,17 +86,18 @@ public class Tyrone extends TeamRobot implements Droid {
 
 
             if (theta <= 180) {
-                setTurnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
-                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 300)
-                    fire(5);
+                setTurnRight(normalRelativeAngleDegrees(theta - getHeading()));
+                setAhead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 100)
+                    fire(3);
             } else {
-                setTurnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
-                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 300)
-                    fire(5);
+                setTurnLeft(normalRelativeAngleDegrees(theta - getHeading()));
+                setAhead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
+                if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 100)
+                    fire(3);
             }
 
-            setAhead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
-            fire(3);
+            fire(2);
 
             }
         // Set our colors
@@ -113,31 +118,5 @@ public class Tyrone extends TeamRobot implements Droid {
 
             broadcastMessage(this.getName());
         } catch (Exception e) {}
-    }
-
-    public void onScannedRobot(ScannedRobotEvent e) {
-        //
-        /* if (stopWhenSeeRobot) {
-            // Stop everything!  You can safely call stop multiple times.
-            stop();
-            // Call our custom firing method
-            smartFire(e.getDistance());
-            // Look for another robot.
-            // NOTE:  If you call scan() inside onScannedRobot, and it sees a robot,
-            // the game will interrupt the event handler and start it over
-            scan();
-            // We won't get here if we saw another robot.
-            // Okay, we didn't see another robot... start moving or turning again.
-            resume();
-        } else {
-            smartFire(e.getDistance());
-        }
-
-
-    }
-
-}
-}
-         */
     }
 }

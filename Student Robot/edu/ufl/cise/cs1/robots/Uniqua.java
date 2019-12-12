@@ -46,7 +46,7 @@ public class Uniqua extends TeamRobot{
         }
         else {
             setAhead(100);
-            fire(1);
+            fire(2);
         }
     }
 
@@ -55,7 +55,14 @@ public class Uniqua extends TeamRobot{
             back(20);
         }
         else {
-            fireBullet(3);
+            if (this.getEnergy() > 35) {
+                fire(3);
+                setAhead(50);
+            } else {
+                fire(3);
+                setTurnRight(30);
+                setBack(50);
+            }
         }
     }
 
@@ -77,7 +84,7 @@ public class Uniqua extends TeamRobot{
             setTurnRight(normalRelativeAngleDegrees(enemyBearing - getHeading()));
             setTurnGunRight(normalRelativeAngleDegrees(enemyBearing - getGunHeading()));
 
-            if(this.getEnergy() > 25) {
+            if(this.getEnergy() > 35) {
                 setAhead(100);
             } else {
                 setBack(25);

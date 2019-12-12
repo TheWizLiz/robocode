@@ -101,8 +101,8 @@ public class Austin extends TeamRobot implements BorderSentry
         double enemyX = getX() + e.getDistance() * Math.sin(angleToEnemy);
         double enemyY = getY() + e.getDistance() * Math.cos(angleToEnemy);
 
-        //Fire the gun if there are less than 3 teammates left
-        if (numTeammates < 3)
+        //Fire the gun if there are less than 2 teammates left
+        if (numTeammates < 2)
             calculatedFire(e.getDistance());
 
 

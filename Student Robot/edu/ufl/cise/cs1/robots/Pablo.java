@@ -22,11 +22,17 @@ public class Pablo extends TeamRobot implements Droid { //Droid makes my robot h
 
     public void onHitRobot(HitRobotEvent e) { //when a robot hits my robot
         if (isTeammate(e.getName())) { //checks if it is a teammate
+            setTurnRight(15);
             back(15); //backs away
         } else {
-            turnGunRight(e.getBearing()); //turns toward it
-            fire(3);
-            ahead(20); //attempts to ram
+            if (this.getEnergy() > 30) {
+                turnGunRight(e.getBearing()); //turns toward it
+                fire(3);
+                ahead(25); //attempts to ram (if enough energy)
+            } else {
+                fire(3);
+                back(50);
+            }
         }
     }
 
@@ -61,7 +67,7 @@ public class Pablo extends TeamRobot implements Droid { //Droid makes my robot h
                 if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10)
                     fire(1);
             }
-            
+
             if (Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) > 600) {
                 fire(.5); //depending on the distance between my robot and the enemy, my robot fires at different powers
             } else if (Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) > 400) {
