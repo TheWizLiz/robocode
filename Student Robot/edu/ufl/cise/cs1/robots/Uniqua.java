@@ -77,8 +77,11 @@ public class Uniqua extends TeamRobot{
             setTurnRight(normalRelativeAngleDegrees(enemyBearing - getHeading()));
             setTurnGunRight(normalRelativeAngleDegrees(enemyBearing - getGunHeading()));
 
-            if(this.getEnergy() > 25)
+            if(this.getEnergy() > 25) {
                 setAhead(100);
+            } else {
+                setBack(25);
+            }
         }
     }
 

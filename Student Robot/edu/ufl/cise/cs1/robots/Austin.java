@@ -97,14 +97,12 @@ public class Austin extends TeamRobot implements BorderSentry
         setTurnRadarRightRadians(radarTurn);
         setTurnGunRightRadians(gunTurn);
 
-        //Calculate the enemy's absolute bearing
-        double enemyDirection = this.getHeading() + e.getBearing();
         //Calculate enemy's x and y positions
         double enemyX = getX() + e.getDistance() * Math.sin(angleToEnemy);
         double enemyY = getY() + e.getDistance() * Math.cos(angleToEnemy);
 
         //Fire the gun if there are less than 3 teammates left
-        if (numTeammates < 4)
+        if (numTeammates < 3)
             calculatedFire(e.getDistance());
 
 
