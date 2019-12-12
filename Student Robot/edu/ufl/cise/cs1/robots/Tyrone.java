@@ -39,13 +39,13 @@ public class Tyrone extends TeamRobot implements Droid {
 
         setTurnRadarRight(Double.POSITIVE_INFINITY);
 
-        /* while (true) {
+        while (true) {
 
-            ahead(100);
-            turnGunRight(360);
-            back(100);
-            turnGunRight(360); */
+            execute();
+
+            setAhead(100);
         }
+    }
 
     public void onHitRobot(HitRobotEvent e) {
         if (isTeammate(e.getName())) {
@@ -82,17 +82,16 @@ public class Tyrone extends TeamRobot implements Droid {
 
 
             if (theta <= 180) {
-                turnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
-                ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
+                setTurnRight(normalRelativeAngleDegrees(theta - getGunHeading()));
                 if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 300)
                     fire(5);
             } else {
-                turnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
-                ahead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
+                setTurnLeft(normalRelativeAngleDegrees(theta - getGunHeading()));
                 if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 300)
                     fire(5);
             }
-            ahead(300);
+
+            setAhead(Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) + 5);
             fire(3);
 
             }

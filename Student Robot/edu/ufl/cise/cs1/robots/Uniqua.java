@@ -1,8 +1,11 @@
 package edu.ufl.cise.cs1.robots;
 
 import robocode.*;
+import sampleteam.Point;
 
 import java.awt.*;
+
+import static robocode.util.Utils.normalRelativeAngleDegrees;
 
 public class Uniqua extends TeamRobot{
     public void setColors() {
@@ -16,12 +19,15 @@ public class Uniqua extends TeamRobot{
     public void run() {
         setColors();
         while (true) {
-            turnRight(90);
-            turnGunRight(360);
-            ahead(100);
-            turnRight(90);
-            ahead(100);
-            turnGunRight(360);
+
+            execute();
+
+            setTurnRight(90);
+            setTurnGunRight(360);
+            setAhead(100);
+            setTurnRight(90);
+            setAhead(100);
+            setTurnGunRight(360);
 
         }
     }
@@ -59,6 +65,21 @@ public class Uniqua extends TeamRobot{
             broadcastMessage(this.getName());
         } catch (Exception notWorking) {}
 
+    }
+
+    public void onMessageReceived(MessageEvent e) {
+        if (e.getMessage() instanceof sampleteam.Point) {
+            sampleteam.Point p = (Point) e.getMessage();
+            double enemyX = p.getX() - this.getX();
+            double enemyY = p.getY() - this.getY();
+            double enemyBearing = Math.toDegrees(Math.atan2(enemyY, enemyY));
+
+            setTurnRight(normalRelativeAngleDegrees(enemyBearing - getHeading()));
+            setTurnGunRight(normalRelativeAngleDegrees(enemyBearing - getGunHeading()));
+
+            if(this.getEnergy() > 25)
+                setAhead(100);
+        }
     }
 
     public void onHitByBullet(HitByBulletEvent e) {

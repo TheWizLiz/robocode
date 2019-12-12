@@ -10,16 +10,21 @@ import java.awt.*;
 import java.io.IOException;
 
 public class Pablo extends TeamRobot implements Droid { //Droid makes my robot have no radar, but a higher starting energy. Scanning comes from messages from the sentry bot, Austin.
-    double lastEnemyDirection;
+    double lastEnemyDirection = 0;
 
     public void run() { //runs while the game is running
+        execute();
+
+        setTurnRight(lastEnemyDirection);
+        setAhead(100);
+
     }
 
     public void onHitRobot(HitRobotEvent e) { //when a robot hits my robot
         if (isTeammate(e.getName())) { //checks if it is a teammate
             back(15); //backs away
         } else {
-            turnRight(e.getBearing()); //turns toward it
+            turnGunRight(e.getBearing()); //turns toward it
             fire(3);
             ahead(20); //attempts to ram
         }
@@ -46,13 +51,13 @@ public class Pablo extends TeamRobot implements Droid { //Droid makes my robot h
             lastEnemyDirection = theta; //stores the last known enemy direction for onHitWall
 
             if (theta <= 180) { //if it is faster to turn right or left
-                turnRight(normalRelativeAngleDegrees(theta - getHeading())); //turns towards the enemy
-                ahead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5); //goes ahead the distancce between my robot and the enemy (distance formula)
+                setTurnRight(normalRelativeAngleDegrees(theta - getHeading())); //turns towards the enemy
+                setAhead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5); //goes ahead the distancce between my robot and the enemy (distance formula)
                 if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10) //if my robot is close enough, it fires
                     fire(1);
             } else {
-                turnLeft(normalRelativeAngleDegrees(theta - getHeading()));
-                ahead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5);
+                setTurnLeft(normalRelativeAngleDegrees(theta - getHeading()));
+                setAhead(Math.sqrt(Math.pow((p.getX() - this.getX()), 2) - Math.pow((p.getY() - this.getY()), 2)) + 5);
                 if (Math.sqrt((p.getY() - this.getY()) * (p.getY() - this.getY()) + (p.getX() - this.getX()) * (p.getX() - this.getX())) <= 10)
                     fire(1);
             }
